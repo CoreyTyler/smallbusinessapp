@@ -1,12 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+//import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+import Router from './Router'
+import NavBar from './components/NavBar'
+import { Provider } from "react-redux"
+import store from "./redux/store"
+
+const Main = () => (
+  <Provider store={store}>
+  <BrowserRouter>
+    <NavBar /> 
+    <Router />
+  </BrowserRouter>
+  </Provider>
+)
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Main />
   </React.StrictMode>,
   document.getElementById('root')
 );
